@@ -51,19 +51,22 @@ public class PlayerController : MonoBehaviour
 
         _animator.SetBool("IsJumping", !sensor.isGrounded);
 
-        if(horizontal < 0)
+        if(horizontal != 0)
         {
             _animator.SetBool("IsRunning", true);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if(horizontal > 0)
-        {
-            _animator.SetBool("IsRunning", true);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
             _animator.SetBool("IsRunning", false);
+        }
+
+        if(horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if(horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         if(Input.GetButtonDown("Jump") && sensor.isGrounded)
