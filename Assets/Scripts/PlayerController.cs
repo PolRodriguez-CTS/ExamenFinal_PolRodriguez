@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+        
         else if(horizontal > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
