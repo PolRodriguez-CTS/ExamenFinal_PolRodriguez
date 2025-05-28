@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     //Variable para acceder al GroundSensor
     private GroundSensor sensor;
 
+    private Animator _animator;
+
     //Variable para almacenar el input de movimiento
     float horizontal;
 
@@ -30,7 +32,8 @@ public class PlayerController : MonoBehaviour
         //Buscamos un Objeto por su nombre, cojemos el Componente GroundSensor de este objeto y lo asignamos a la variable
         sensor = GameObject.Find("GroundSensor").GetComponent<GroundSensor>();
         //Buscamos el objeto del GameManager y SFXManager lo asignamos a las variables
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _animator = GetComponent<Animator>();       
     }
 
     // Update is called once per frame
@@ -43,13 +46,21 @@ public class PlayerController : MonoBehaviour
         
         horizontal = Input.GetAxis("Horizontal");
 
+        _animator.SetBool("IsJumping", !sensor.isGrounded);
+
         if(horizontal < 0)
         {
+            _animator.SetBool("IsRunning", true);
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else if(horizontal > 0)
         {
+            _animator.SetBool("IsRunning", true);
             transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            _animator.SetBool("IsRunning", false);
         }
 
         if(Input.GetButtonDown("Jump") && sensor.isGrounded)
