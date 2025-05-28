@@ -4655,9 +4655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3337ac6c01486e4c92bc3caaa199099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
+  playerTransform: {fileID: 7102897459264945059, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
   minPosition: {x: 0, y: 0}
   maxPosition: {x: 0, y: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &552328802
 GameObject:
   m_ObjectHideFlags: 0
@@ -17341,34 +17342,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mario
       objectReference: {fileID: 0}
-    - target: {fileID: 7102897459264945057, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: attackRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102897459264945057, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: bulletSpawn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102897459264945057, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: attackHitBox
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102897459264945057, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 3049967276280573395, guid: d5c558abf0281494b9ea53675a831220, type: 3}
-    - target: {fileID: 7102897459264945057, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102897459264945058, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102897459264945059, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 7102897459264945059, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -101.7
@@ -17408,10 +17381,6 @@ PrefabInstance:
     - target: {fileID: 7102897459264945059, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102897459264945070, guid: 457cbd0a68e12d34aa6e0bc2bcb40d2c, type: 3}
-      propertyPath: m_Controller
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

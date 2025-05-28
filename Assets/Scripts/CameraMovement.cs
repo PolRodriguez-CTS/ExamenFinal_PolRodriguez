@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    private Transform playerTransform;
-    public Vector3 offset;
+    public Transform playerTransform;
+    
     public Vector2 minPosition;
     public Vector2 maxPosition;
-
+    public Vector3 offset;
+    
     // Start is called before the first frame update
     void Awake()
     {
-        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class CameraMovement : MonoBehaviour
         Vector3 cameraPosition = playerTransform.position + offset;
         float clampX = Mathf.Clamp(cameraPosition.x, minPosition.x, maxPosition.x);
         float clampY = Mathf.Clamp(cameraPosition.y, minPosition.y, maxPosition.y);
+
         Vector3 clampedCameraPosition = new Vector3(clampX, clampY, cameraPosition.z);
     }
 }

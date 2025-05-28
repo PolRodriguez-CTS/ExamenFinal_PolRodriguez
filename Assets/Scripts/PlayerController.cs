@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     GameManager gameManager;
 
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+
     void Awake()
     {
         //Asignamos la variables del SpriteRender con el componente que tiene este objeto
@@ -66,7 +69,12 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Jump") && sensor.isGrounded)
         {
             rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }        
+        }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }     
     }
 
     void FixedUpdate()
@@ -87,5 +95,10 @@ public class PlayerController : MonoBehaviour
             gameManager.AddCoin();
             Destroy(collider.gameObject);
         }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
     }
 }
